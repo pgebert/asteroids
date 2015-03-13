@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Patrick\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\Patrick\Documents\AndroidStudio\ConnectionMachineExample\app\build\intermediates\pre-dexed\debug\library-2.4.0-b6eec67430ea78aba30d2194c4070b19f0170b0c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Patrick\Documents\AndroidStudio\ConnectionMachineExample\app\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.4\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="87405405e403de68f4057757b8a2e8de02bd65d0">
+        <dex dex="C:\Users\Patrick\Documents\AndroidStudio\ConnectionMachineExample\app\build\intermediates\pre-dexed\debug\classes-78afdcd83113901d8f91821a12a4939035adaa9b.jar" />
+    </item>
+    <item
+        jar="D:\Programme\Android SDK\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="C:\Users\Patrick\Documents\AndroidStudio\ConnectionMachineExample\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-d3ea83a6a471663b970ae20f9d16d79165694e23.jar" />
+    </item>
+
+</items>

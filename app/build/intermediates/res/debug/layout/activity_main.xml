@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/headingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30sp"
+        android:layout_marginTop="20sp"
+        android:text="@string/headingText"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/instructionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:gravity="center"
+        android:text="@string/instructionText"
+        android:textSize="16sp" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1E88E5"
+            android:layout_marginTop="30sp"
+            android:layout_centerHorizontal="true"
+            android:onClick="start"
+            materialdesign:animate="true"
+            materialdesign:iconDrawable="@drawable/ic_action_gamepad" />
+
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/rightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1E88E5"
+            android:layout_marginTop="150sp"
+            android:layout_marginRight="30sp"
+            android:layout_alignParentRight="true"
+            android:onClick="onRightButton"
+            materialdesign:animate="false"
+            materialdesign:iconDrawable="@drawable/ic_action_next_item" />
+
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/leftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1E88E5"
+            android:layout_marginTop="150sp"
+            android:layout_marginLeft="30sp"
+            android:layout_alignParentLeft="true"
+            android:onClick="onLeftButton"
+            materialdesign:animate="false"
+            materialdesign:iconDrawable="@drawable/ic_action_previous_item" />
+
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/shootButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1E88E5"
+            android:layout_marginTop="200sp"
+            android:layout_centerHorizontal="true"
+            android:onClick="onShootButton"
+            materialdesign:animate="false"
+            materialdesign:iconDrawable="@drawable/ic_action_location_found" />
+
+
+    </RelativeLayout>
+</LinearLayout><!-- From: file:/C:/Users/Patrick/Documents/AndroidStudio/ConnectionMachineExample/app/src/main/res/layout/activity_main.xml -->

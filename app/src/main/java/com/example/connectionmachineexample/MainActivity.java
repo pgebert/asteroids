@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
     protected static final String APP_NAME = "Asteroids";
 
     private ButtonFloat mStartButton;
+    private ButtonFloat mEndButton;
     private ButtonFloat mRightButton;
     private ButtonFloat mLeftButton;
     private ButtonFloat mShootButton;
@@ -45,11 +46,13 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mStartButton = (ButtonFloat) findViewById(R.id.startButton);
+        mEndButton = (ButtonFloat) findViewById(R.id.endButton);
         mRightButton = (ButtonFloat) findViewById(R.id.rightButton);
         mLeftButton = (ButtonFloat) findViewById(R.id.leftButton);
         mShootButton = (ButtonFloat) findViewById(R.id.shootButton);
         mPointTextView = (TextView) findViewById(R.id.pointsTextView);
 
+        mEndButton.setVisibility(View.GONE);
         mRightButton.setEnabled(false);
         mLeftButton.setEnabled(false);
         mShootButton.setEnabled(false);
@@ -57,7 +60,9 @@ public class MainActivity extends Activity {
 
 
     public void start(View v) {
-        mStartButton.setEnabled(false);
+        mStartButton.setVisibility(View.GONE);
+        mEndButton.setVisibility(View.VISIBLE);
+        mEndButton.setEnabled(true);
         mRightButton.setEnabled(true);
         mLeftButton.setEnabled(true);
         mShootButton.setEnabled(true);
@@ -97,8 +102,10 @@ public class MainActivity extends Activity {
                 // Prepare variables for making the pattern.
                 int frame = 0;
 
+
                 game = new AsteroidsGame();
                 game.onStart();
+
 
                 // Main sending loop.
                 while (loop) {
@@ -151,6 +158,7 @@ public class MainActivity extends Activity {
 
     /**
      * Write string into the point text view
+     *
      * @param points the points string
      */
     public static void writePoints(String points) {
@@ -173,23 +181,50 @@ public class MainActivity extends Activity {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                };
+                }
+
+                ;
             }
             Thread writer = new Thread(new OneWriteTask(points));
             writer.start();
         }
     }
 
+    public void end(View v) {
+        mEndButton.setVisibility(View.GONE);
+        mStartButton.setVisibility(View.VISIBLE);
+
+        mLeftButton.setEnabled(false);
+        mRightButton.setEnabled(false);
+        mShootButton.setEnabled(false);
+
+        if (BT != null) {
+            BT.closeConnection();
+        }
+    }
 
     @Override
     public void onPause() {
         super.onPause();
 
-        mStartButton.setEnabled(true);
+        mEndButton.setVisibility(View.GONE);
+        mStartButton.setVisibility(View.VISIBLE);
+
+        mLeftButton.setEnabled(false);
+        mRightButton.setEnabled(false);
+        mShootButton.setEnabled(false);
 
         // Avoid crash if user exits the app before pressing start.
         if (BT != null) {
             BT.onPause();
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+
+        mStartButton.setEnabled(true);
     }
 }

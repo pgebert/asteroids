@@ -21,6 +21,7 @@ public class AsteroidsGame {
     public static void onStart() {
         //Reinit matrix
         LEDMatrix.clear();
+        LEDMatrix.removeAllObjects();
         LEDMatrix.setFrame(0);
         LEDMatrix.setCreateAsteroids(true);
 

@@ -33,6 +33,7 @@ public class AsteroidsAsteroid extends LEDMatrixObject {
                 if (targetInBorder(point, vector)) {
                     point.add(vector);
                 } else {
+                    AsteroidsGame.onEnd();
                     this.body.remove(point);
                 }
             }
@@ -44,6 +45,7 @@ public class AsteroidsAsteroid extends LEDMatrixObject {
     @Override
     public void onCollision() {
         destroy();
+        AsteroidsGame.addPoints(100);
     }
 
     public void destroy() {

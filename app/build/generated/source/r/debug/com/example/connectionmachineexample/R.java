@@ -187,31 +187,32 @@ containing a value of this type.
         public static final int sprite_check=0x7f020016;
     }
     public static final class id {
-        public static final int blue=0x7f0a000b;
-        public static final int button_accept=0x7f0a0012;
-        public static final int button_cancel=0x7f0a0011;
-        public static final int buttonflat=0x7f0a0016;
-        public static final int contentDialog=0x7f0a000d;
-        public static final int contentSelector=0x7f0a0007;
-        public static final int dialog_rootView=0x7f0a000c;
-        public static final int green=0x7f0a000a;
+        public static final int blue=0x7f0a000c;
+        public static final int button_accept=0x7f0a0013;
+        public static final int button_cancel=0x7f0a0012;
+        public static final int buttonflat=0x7f0a0017;
+        public static final int contentDialog=0x7f0a000e;
+        public static final int contentSelector=0x7f0a0008;
+        public static final int dialog_rootView=0x7f0a000d;
+        public static final int green=0x7f0a000b;
         public static final int headingTextView=0x7f0a0000;
         public static final int instructionTextView=0x7f0a0001;
         public static final int leftButton=0x7f0a0004;
-        public static final int message=0x7f0a0010;
-        public static final int message_scrollView=0x7f0a000f;
-        public static final int number_indicator_spinner_content=0x7f0a0013;
-        public static final int progressBarCircularIndetermininate=0x7f0a0014;
-        public static final int red=0x7f0a0009;
+        public static final int message=0x7f0a0011;
+        public static final int message_scrollView=0x7f0a0010;
+        public static final int number_indicator_spinner_content=0x7f0a0014;
+        public static final int pointsTextView=0x7f0a0006;
+        public static final int progressBarCircularIndetermininate=0x7f0a0015;
+        public static final int red=0x7f0a000a;
         public static final int rightButton=0x7f0a0003;
-        public static final int rootSelector=0x7f0a0006;
-        public static final int shape_bacground=0x7f0a0018;
+        public static final int rootSelector=0x7f0a0007;
+        public static final int shape_bacground=0x7f0a0019;
         public static final int shootButton=0x7f0a0005;
-        public static final int snackbar=0x7f0a0015;
+        public static final int snackbar=0x7f0a0016;
         public static final int startButton=0x7f0a0002;
-        public static final int text=0x7f0a0017;
-        public static final int title=0x7f0a000e;
-        public static final int viewColor=0x7f0a0008;
+        public static final int text=0x7f0a0018;
+        public static final int title=0x7f0a000f;
+        public static final int viewColor=0x7f0a0009;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -229,9 +230,10 @@ containing a value of this type.
         public static final int headingText=0x7f070001;
         public static final int instructionText=0x7f070002;
         public static final int leftText=0x7f070003;
-        public static final int rightText=0x7f070004;
-        public static final int shootText=0x7f070005;
-        public static final int startText=0x7f070006;
+        public static final int pointsText=0x7f070004;
+        public static final int rightText=0x7f070005;
+        public static final int shootText=0x7f070006;
+        public static final int startText=0x7f070007;
     }
     public static final class style {
         /** 

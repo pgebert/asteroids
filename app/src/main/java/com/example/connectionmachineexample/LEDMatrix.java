@@ -9,16 +9,20 @@ import java.util.Random;
  */
 public class LEDMatrix {
 
-    private int[][] ledBoard = new int[X_SIZE][Y_SIZE];
+    // Remote display x and y size.
+    protected static final int X_SIZE = 24;
+    protected static final int Y_SIZE = 24;
+
+    private static int[][] ledBoard = new int[X_SIZE][Y_SIZE];
 
     private static List<LEDMatrixObject> objects = new ArrayList<LEDMatrixObject>();
     private static int frame;
 
+    private static boolean createAsteroids;
+
     public static final int LED_ON = 255;
     public static final int LED_OFF = 0;
-    // Remote display x and y size.
-    protected static final int X_SIZE = 24;
-    protected static final int Y_SIZE = 24;
+
 
     private static LEDMatrix matrix = null;
 
@@ -26,6 +30,7 @@ public class LEDMatrix {
         // Exists only to defeat instantiation.
         this.clear();
         frame = 0;
+        createAsteroids = true;
     }
 
     /**
@@ -68,9 +73,16 @@ public class LEDMatrix {
     }
 
     /**
+     * Removes all the stored game objects
+     */
+    public static void removeAllObjects() {
+        objects.clear();
+    }
+
+    /**
      * Clear the LED Matrix
      */
-    public void clear() {
+    public static void clear() {
         for (int i = 0; i < ledBoard.length; i++) {
             for (int j = 0; j < ledBoard[i].length; j++)
                 ledBoard[i][j] = LED_OFF;
@@ -107,7 +119,9 @@ public class LEDMatrix {
      * Method is called directly when frame starts
      */
     public void initFrame() {
-        createAsteroid();
+        if (this.createAsteroids) {
+            createAsteroid();
+        }
     }
 
     /**
@@ -181,5 +195,9 @@ public class LEDMatrix {
                 ledBoard[point.getX()][point.getY()] = LED_ON;
             }
         }
+    }
+
+    public static void setCreateAsteroids(boolean createAsteroids) {
+        LEDMatrix.createAsteroids = createAsteroids;
     }
 }

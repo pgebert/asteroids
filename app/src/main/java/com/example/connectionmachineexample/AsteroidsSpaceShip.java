@@ -56,7 +56,8 @@ public class AsteroidsSpaceShip extends LEDMatrixObject {
 
     @Override
     public void onCollision() {
-
+        AsteroidsGame.addPoints( -100);
+        AsteroidsGame.onEnd();
     }
 
     @Override

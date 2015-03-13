@@ -34,9 +34,9 @@
             android:id="@+id/startButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#1E88E5"
-            android:layout_marginTop="30sp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="30sp"
+            android:background="#1E88E5"
             android:onClick="start"
             materialdesign:animate="true"
             materialdesign:iconDrawable="@drawable/ic_action_gamepad" />
@@ -45,10 +45,10 @@
             android:id="@+id/rightButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#1E88E5"
-            android:layout_marginTop="150sp"
-            android:layout_marginRight="30sp"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="30sp"
+            android:layout_marginTop="150sp"
+            android:background="#1E88E5"
             android:onClick="onRightButton"
             materialdesign:animate="false"
             materialdesign:iconDrawable="@drawable/ic_action_next_item" />
@@ -57,10 +57,10 @@
             android:id="@+id/leftButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#1E88E5"
-            android:layout_marginTop="150sp"
-            android:layout_marginLeft="30sp"
             android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="150sp"
+            android:background="#1E88E5"
             android:onClick="onLeftButton"
             materialdesign:animate="false"
             materialdesign:iconDrawable="@drawable/ic_action_previous_item" />
@@ -69,12 +69,22 @@
             android:id="@+id/shootButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#1E88E5"
-            android:layout_marginTop="200sp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="200sp"
+            android:background="#1E88E5"
             android:onClick="onShootButton"
             materialdesign:animate="false"
             materialdesign:iconDrawable="@drawable/ic_action_location_found" />
+
+
+        <TextView
+            android:id="@+id/pointsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120sp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/pointsText"
+            android:textSize="16sp" />
 
 
     </RelativeLayout>

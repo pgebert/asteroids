@@ -3,6 +3,7 @@
 
     <string name="app_name">Asteroids</string>
     <string name="startText">Start</string>
+    <string name="pointsText">0</string>
     <string name="rightText">Right</string>
     <string name="leftText">Left</string>
     <string name="shootText">Shoot</string>

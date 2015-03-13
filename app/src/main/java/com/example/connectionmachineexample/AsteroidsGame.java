@@ -1,14 +1,15 @@
 package com.example.connectionmachineexample;
 
+
 /**
  * Created by Patrick on 06.03.2015.
  */
 public class AsteroidsGame {
 
     private LEDMatrix matrix;
-    private int frame;
 
-    private AsteroidsSpaceShip ship;
+    private static AsteroidsSpaceShip ship;
+    private static int points;
 
     public AsteroidsGame() {
         this.matrix = LEDMatrix.getMatrix();
@@ -17,9 +18,31 @@ public class AsteroidsGame {
     /**
      * Initialize the game and add the objects
      */
-    public void start() {
-        this.ship = new AsteroidsSpaceShip(new LEDMatrixPoint(0, 20));
-        matrix.addObject(this.ship);
+    public static void onStart() {
+        //Reinit matrix
+        LEDMatrix.clear();
+        LEDMatrix.setFrame(0);
+        LEDMatrix.setCreateAsteroids(true);
+
+        AsteroidsGame.setPoints(0);
+        ship = new AsteroidsSpaceShip(new LEDMatrixPoint(0, 20));
+        LEDMatrix.addObject(ship);
+    }
+
+    public static void onEnd()  {
+        LEDMatrix.setCreateAsteroids(false);
+        LEDMatrix.removeAllObjects();
+        AsteroidsGameFont endHeading = new AsteroidsGameFont(new LEDMatrixPoint(), AsteroidsGameFont.getEndFontPoints());
+        LEDMatrix.addObject(endHeading);
+    }
+
+    public static void setPoints(int points) {
+        AsteroidsGame.points = points;
+    }
+
+    public static void addPoints(int points) {
+        AsteroidsGame.points += points;
+        MainActivity.writePoints(AsteroidsGame.points + "");
     }
 
     /**
@@ -33,8 +56,9 @@ public class AsteroidsGame {
         matrix.render();
     }
 
+
     public void rightButton() {
-        this.ship.moveRight();
+       this.ship.moveRight();
     }
 
     public void leftButton() {

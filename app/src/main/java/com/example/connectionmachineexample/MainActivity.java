@@ -198,6 +198,8 @@ public class MainActivity extends Activity {
         mRightButton.setEnabled(false);
         mShootButton.setEnabled(false);
 
+        MainActivity.writePoints(0 + "");
+
         if (BT != null) {
             BT.closeConnection();
         }

@@ -19,6 +19,8 @@ public class LEDMatrix {
     private static int frame;
 
     private static boolean createAsteroids;
+    private int asteroidCreationSpeed;
+    private int asteroidSpeed;
 
     public static final int LED_ON = 255;
     public static final int LED_OFF = 0;
@@ -29,8 +31,11 @@ public class LEDMatrix {
     protected LEDMatrix() {
         // Exists only to defeat instantiation.
         this.clear();
-        frame = 0;
-        createAsteroids = true;
+        LEDMatrix.frame = 0;
+        LEDMatrix.createAsteroids = true;
+        this.asteroidCreationSpeed = 80;
+        this.asteroidSpeed = 10;
+
     }
 
     /**
@@ -120,20 +125,48 @@ public class LEDMatrix {
      */
     public void initFrame() {
         if (this.createAsteroids) {
-            createAsteroid();
+            createAsteroid(10);
+        }
+    }
+
+    /**
+     * Increases the asteroid creation speed about a given value.
+     * @param value the value to increase
+     */
+    public void increaseAsteroidCreationSpeed(int value) {
+        int speedValue = this.asteroidCreationSpeed - value;
+        if (speedValue < 0) {
+            this.asteroidCreationSpeed = 0;
+        } else {
+            this.asteroidCreationSpeed = speedValue;
+        }
+    }
+
+    /**
+     * Increases the asteroid moving speed about a given value.
+     * @param value the value to increase
+     */
+    public void increaseAsteroidSpeed(int value) {
+        int speedValue = this.asteroidSpeed - value;
+        if (speedValue < 0) {
+            this.asteroidSpeed = 0;
+        } else {
+            this.asteroidSpeed = speedValue;
         }
     }
 
     /**
      * Creates an asteroid at random position
      */
-    public void createAsteroid() {
-        if (speed(80)) {
+    public void createAsteroid(int asteroidSpeed) {
+        if (speed(asteroidCreationSpeed)) {
             int random = randInt(0, 19);
             AsteroidsAsteroid asteroid = new AsteroidsAsteroid(new LEDMatrixPoint(random, 0));
+            asteroid.setMoveSpeed(asteroidSpeed);
             LEDMatrix.addObject(asteroid);
+            this.increaseAsteroidCreationSpeed(1);
+            this.increaseAsteroidSpeed(2);
         }
-
     }
 
     /**

@@ -7,6 +7,8 @@ import java.util.ArrayList;
  */
 public class AsteroidsAsteroid extends LEDMatrixObject {
 
+    private int moveSpeed;
+
     public AsteroidsAsteroid(LEDMatrixPoint position) {
         super(new LEDMatrixPoint());
         this.body.add(new LEDMatrixPoint(1, 0));
@@ -17,6 +19,7 @@ public class AsteroidsAsteroid extends LEDMatrixObject {
         this.orientation = new LEDMatrixVector(0, 1);
         this.moveToPosition(position);
         this.position = position;
+        this.moveSpeed = 10;
     }
 
     /**
@@ -54,8 +57,12 @@ public class AsteroidsAsteroid extends LEDMatrixObject {
 
     @Override
     public void run() {
-        if (LEDMatrix.speed(10)) {
+        if (LEDMatrix.speed(moveSpeed)) {
             move(new LEDMatrixVector(0, 1));
         }
+    }
+
+    public void setMoveSpeed(int moveSpeed) {
+        this.moveSpeed = moveSpeed;
     }
 }
